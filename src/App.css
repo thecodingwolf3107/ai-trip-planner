@@ -1,38 +1,268 @@
-.App {
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.content{
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-top: 120px;
+  color: white;
+  transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+}
+
+.map-section{
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+/* MAP BOX (SQUARE CARD STYLE) */
+.map-box {
+  width: 80%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* MAP */
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.trip-result {
+  width: 80%;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: left;
+}
+
+.trip-result h2 {
+  margin-bottom: 15px;
+}
+
+.trip-result pre {
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.trip-result{
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  color: black;
+  z-index: 999;
+  position: relative;
+}
+
+.day-card{
+  background: #f5f5f5;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.place-card{
+  background: white;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.place-card p{
+  color: black;
+  font-size: 18px;
+}
+
+.day-card h3{
+  color: black;
+}
+
+.trip-result h2{
+  color: black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.day-card{
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 20px rgba(0,0,0,0.5);
+
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .search-box {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255,255,255,0.12);
+
+  padding: 18px;
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.3);
+
+  width: fit-content;
+  margin: auto;
+} */
+
+.search-box input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  width: 220px;
+  font-size: 16px;
+}
+
+.search-box button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #00bfff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #009acd;
+}
+
+.search-box {
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  gap: 20px;
+
+  background: rgba(0,0,0,0.35);
+
+  padding: 25px;
+
+  border-radius: 24px;
+
+  backdrop-filter: blur(8px);
+
+  width: fit-content;
+
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.place-card {
+  display: flex;
+  gap: 25px;
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  margin-top: 20px;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.place-card:hover {
+  transform: translateY(-5px);
+}
+
+.place-image {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+.place-info {
+  flex: 1;
+}
+
+.place-info p {
+  margin: 10px 0;
+}
+
+.place-description {
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.search-box select {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  width: 220px;
+  font-size: 16px;
 }
