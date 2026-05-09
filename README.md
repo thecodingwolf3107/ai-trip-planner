@@ -46,20 +46,20 @@ An AI-powered travel planning web application that generates smart day-wise trip
 ## Installation
 
 1. Clone the repository
-git clone https://github.com/thecodingwolf3107/ai-trip-planner.git
+[ git clone https://github.com/thecodingwolf3107/ai-trip-planner.git]
 
 2. Navigate to project folder
- cd ai-trip-planner/client
+ [ cd ai-trip-planner/client ]
 
 3. Install dependencies
-   npm install
+   [ npm install ]
 
 4. Create .env file
-  REACT_APP_GEMINI_API_KEY=your_api_key
-  REACT_APP_PEXELS_API_KEY=your_api_key
+  [ REACT_APP_GEMINI_API_KEY=your_api_key ,
+  REACT_APP_PEXELS_API_KEY=your_api_key ]
 
 5. Start the development server
-   npm start
+   [ npm start ]
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
